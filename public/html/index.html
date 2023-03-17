@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,79 +30,14 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="main.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/includeHTML.js"></script>
     
   </head>
   <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid px-4 px-lg-5">
-        <!-- 로고 -->
-        <a class="navbar-brand" href="#!">Run Into</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- 검색창 -->
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Search" />
-          <button class="btn btn-primary" type="button">Search</button>
-        </form>
-        <!-- 로그인 섹션 -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent1">
-          <form class="d-flex">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#!">admin login</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#!">user login</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="#!">회원 가입</a>
-              </li>
-            </ul>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-        <form class="d-flex">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#!">항공권</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#!">숙소</a></li>
-            <li class="nav-item dropdown"><a class="nav-link" href="#!">투어 티켓</a></li>
-            <li class="nav-item dropdown"><a class="nav-link" href="#!">국내 렌터카</a></li>
-            <li class="nav-item dropdown"><a class="nav-link" href="#!">패키지</a></li>
-            <li class="nav-item dropdown"><a class="nav-link" href="#!">호텔 특가</a></li>
-            <li>
-              <a
-                class="nav-link dropdown-toggle"
-                id="navbarDropdown"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                >더보기</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-              </ul>
-            </li>
-          </ul>
-        </form>
-      </div>
-    </nav>
+  
+    <nav include-html="/public/html/navbar.html"></nav>
+    <script>includeHTML();</script>
     <hr />
     <!-- Header-->
     <header class="container">
@@ -122,13 +57,13 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./image/slide1.jpg" alt="Los Angeles" class="d-block w-100" />
+                    <img src="../image/slide1.jpg" alt="Los Angeles" class="d-block w-100" />
                 </div>
                 <div class="carousel-item">
-                    <img src="./image/slide2.jpg" alt="Chicago" class="d-block w-100" />
+                    <img src="../image/slide2.jpg" alt="Chicago" class="d-block w-100" />
                 </div>
                 <div class="carousel-item">
-                    <img src="./image/slide3.jpg" alt="New York" class="d-block w-100" />
+                    <img src="../image/slide3.jpg" alt="New York" class="d-block w-100" />
                 </div>
             </div>
 
@@ -153,7 +88,7 @@
     <!-- Section-->
     <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
-        <div class="row mt-2"><h4>실시간 베스트 상품</h4></div>
+        <div class="row mt-2"><h1>여행이 돌아왔어요!</h1></div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
           <div class="col mb-5">
                 <div class="card h-100">
@@ -575,6 +510,6 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
   </body>
 </html>
