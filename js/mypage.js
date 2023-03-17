@@ -8,6 +8,8 @@ function mypageSet() {
   localStorage.setItem(2, navId);
   localStorage.setItem(3, navPwd);
   localStorage.setItem(4, navPwCheck);
+
+  alert("회원가입과 로그인이 완료되었습니다!");
 }
 function logout() {
   localStorage.clear();
