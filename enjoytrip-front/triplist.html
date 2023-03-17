@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="">
+    <div class="alert alert-primary mt-3 text-center fw-bold" role="alert">
+      전국 관광지 정보 알아보기
+    </div>
+    <!-- 관광지 검색 start -->
+    <form class="d-flex my-3" onsubmit="return false;" role="search">
+      <select id="search-area" class="form-select me-2">
+        <option value="0" selected>검색 할 지역 선택</option>
+      </select>
+      <select id="search-content-id" class="form-select me-2">
+        <option value="0" selected>관광지 유형</option>
+        <option value="12">관광지</option>
+        <option value="14">문화시설</option>
+        <option value="15">축제공연행사</option>
+        <option value="25">여행코스</option>
+        <option value="28">레포츠</option>
+        <option value="32">숙박</option>
+        <option value="38">쇼핑</option>
+        <option value="39">음식점</option>
+      </select>
+      <input
+        id="search-keyword"
+        class="form-control me-2"
+        type="search"
+        placeholder="검색어"
+        aria-label="검색어"
+      />
+      <button id="btn-search" class="btn btn-outline-success" type="button">
+        검색
+      </button>
+    </form>
+
+    <!-- 관광지 검색 end -->
+  </div>
+</div>
+<!-- 중앙 content end -->
