@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "requirejs": "^2.3.6",
+    "vanilla-require": "^1.0.2"
+  },
+  "type": "commonjs",
+  "module": "commonjs"
+}
