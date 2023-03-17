@@ -58,4 +58,5 @@ async function main() {
     document.getElementById(`section1-addr${i}`).innerText = json[0].addr1;
   }
 }
+
 main();
