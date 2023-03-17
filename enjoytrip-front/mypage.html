@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+볼꺼없다
+<div id="1">a</div>
+    
+<!-- <h1 id="1">~</h1> -->
+<h1 id="2">~</h1>
+<h1 id="3">~</h1>
+<h1 id="4">`</h1>
+
+<script>
+
+    function loding(params) {
+
+        for (let index = 1; index < 5; index++) {
+            // alert(index)
+            document.getElementById(index).innerText = window.localStorage.key(index);            
+        }
+    }
+    let name = document.getElementById("1");
+    console.log(name.innerText);
+    name.innerText = window.localStorage.getItem(1);
+
+    window.onload =  loding;
+
+</script>
+</body>
+
+
+</html>
