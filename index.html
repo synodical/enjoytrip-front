@@ -54,7 +54,7 @@
     <script src="./js/carousel.js" type="module"></script>
     <script src="./js/includeHTML.js"></script>
     <script src="./js/mypage.js"></script>
-
+    <script></script>
   </head>
   <body>
     <nav include-html="/enjoytrip-front/navbar.html"></nav>
@@ -93,22 +93,22 @@
     <script>
       // index page 로딩 후 전국의 시도 설정.
       let areaUrl =
-        "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=" +
+        'https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=' +
         serviceKey +
-        "&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json";
+        '&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json';
 
       // fetch(areaUrl, { method: "GET" }).then(function (response) { return response.json() }).then(function (data) { makeOption(data); });
-      fetch(areaUrl, { method: "GET" })
+      fetch(areaUrl, { method: 'GET' })
         .then((response) => response.json())
         .then((data) => makeOption(data));
 
       function makeOption(data) {
         let areas = data.response.body.items.item;
         // console.log(areas);
-        let sel = document.getElementById("search-area");
+        let sel = document.getElementById('search-area');
         areas.forEach((area) => {
-          let opt = document.createElement("option");
-          opt.setAttribute("value", area.code);
+          let opt = document.createElement('option');
+          opt.setAttribute('value', area.code);
           opt.appendChild(document.createTextNode(area.name));
 
           sel.appendChild(opt);
@@ -119,18 +119,18 @@
       // 지역, 유형, 검색어 얻기.
       // 위 데이터를 가지고 공공데이터에 요청.
       // 받은 데이터를 이용하여 화면 구성.
-      document.getElementById("btn-search").addEventListener("click", () => {
+      document.getElementById('btn-search').addEventListener('click', () => {
         let searchUrl = `https://apis.data.go.kr/B551011/KorService1/searchKeyword1?serviceKey=${serviceKey}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A`;
 
-        let areaCode = document.getElementById("search-area").value;
-        let contentTypeId = document.getElementById("search-content-id").value;
-        let keyword = document.getElementById("search-keyword").value;
+        let areaCode = document.getElementById('search-area').value;
+        let contentTypeId = document.getElementById('search-content-id').value;
+        let keyword = document.getElementById('search-keyword').value;
 
         if (parseInt(areaCode)) searchUrl += `&areaCode=${areaCode}`;
         if (parseInt(contentTypeId))
           searchUrl += `&contentTypeId=${contentTypeId}`;
         if (!keyword) {
-          alert("검색어 입력 필수!!!");
+          alert('검색어 입력 필수!!!');
           return;
         } else searchUrl += `&keyword=${keyword}`;
 
@@ -141,7 +141,7 @@
 
       var positions; // marker 배열.
       function makeList(data) {
-        document.querySelector("table").setAttribute("style", "display: ;");
+        document.querySelector('table').setAttribute('style', 'display: ;');
         let trips = data.response.body.items.item;
         let tripList = ``;
         positions = [];
@@ -162,12 +162,12 @@
           };
           positions.push(markerInfo);
         });
-        document.getElementById("trip-list").innerHTML = tripList;
+        document.getElementById('trip-list').innerHTML = tripList;
         displayMarker();
       }
 
       // 카카오지도
-      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
           center: new kakao.maps.LatLng(37.500613, 127.036431), // 지도의 중심좌표
           level: 5, // 지도의 확대 레벨
@@ -179,7 +179,7 @@
       function displayMarker() {
         // 마커 이미지의 이미지 주소입니다
         var imageSrc =
-          "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+          'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png';
 
         for (var i = 0; i < positions.length; i++) {
           // 마커 이미지의 이미지 크기 입니다
